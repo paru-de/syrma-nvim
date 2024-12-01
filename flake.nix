@@ -10,8 +10,8 @@
     nixCats.url = "github:BirdeeHub/nixCats-nvim";
 
     # change the color and text decoration of a line number when the mode changes
-    plugin-lnchangemode = {
-      url = "sethen/line-number-change-mode";
+    "plugins-lnchangemode" = {
+      url = "github:sethen/line-number-change-mode.nvim";
       flake = false;
     };
 
@@ -115,9 +115,9 @@
       lspsAndRuntimeDeps = {
         # some categories of stuff.
         general = with pkgs; [
-          universal-ctags
-          ripgrep
           fd
+          ripgrep
+          universal-ctags
         ];
         # these names are arbitrary.
         lint = with pkgs; [
@@ -128,13 +128,15 @@
           go = [delve];
         };
         go = with pkgs; [
+          go-tools
           gopls
           gotools
-          go-tools
-          gccgo
         ];
         # and easily check if they are included in lua
         format = with pkgs; [
+          gofumpt
+          alejandra
+          stylua
         ];
         neonixdev = {
           # also you can do this.
@@ -155,9 +157,11 @@
             lze
             vim-repeat
             plenary-nvim
+            conform-nvim
           ];
           extra = [
             oil-nvim
+            otter-nvim
             nvim-web-devicons
           ];
         };
@@ -345,7 +349,7 @@
     packageDefinitions = {
       # the name here is the name of the package
       # and also the default command name for it.
-      nixCats = {pkgs, ...} @ misc: {
+      syrma-nvim = {pkgs, ...} @ misc: {
         # these also recieve our pkgs variable
         # see :help nixCats.flake.outputs.packageDefinitions
         settings = {
@@ -359,7 +363,7 @@
           # explained below in the `regularCats` package's definition
           # OR see :help nixCats.flake.outputs.settings for all of the settings available
           wrapRc = true;
-          configDirName = "nixCats-nvim";
+          configDirName = "syrma-nvim";
           # neovim-unwrapped = inputs.neovim-nightly-overlay.packages.${pkgs.system}.neovim;
         };
         # enable the categories you want from categoryDefinitions
@@ -375,7 +379,7 @@
 
           # enabling this category will enable the go category,
           # and ALSO debug.go and debug.default due to our extraCats in categoryDefinitions.
-          # go = true; # <- disabled but you could enable it with override or module on install
+          go = true;
 
           # this does not have an associated category of plugins,
           # but lua can still check for it
@@ -452,7 +456,7 @@
       };
     };
 
-    defaultPackageName = "nixCats";
+    defaultPackageName = "syrma-nvim";
     # I did not here, but you might want to create a package named nvim.
     # defaultPackageName is also passed to utils.mkNixosModules and utils.mkHomeModules
     # and it controls the name of the top level option set.
