@@ -37,7 +37,6 @@ vim.api.nvim_set_hl(0, "MiniNotifyNormal", { bg = "#202020", fg = "#bbc2cf" })
 vim.opt.termguicolors = true
 
 -- [[ Setting options ]]
-
 -- Enable mouse mode
 vim.opt.mouse = "a"
 
@@ -64,8 +63,8 @@ vim.opt.showmode = false
 vim.opt.scrolloff = 10
 
 -- Sets how neovim will display certain whitespace characters in the editor.
-vim.opt.list = true
-vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
+vim.opt.list = false
+--vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
 
 -- Enable line wrapping and set the wrap width to 80 characters
 vim.opt.wrap = true
