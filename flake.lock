@@ -17,11 +17,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1732971106,
-        "narHash": "sha256-pHO+NWd8wJGDuVJjyyxdgtcmiGhNNKbIIXLMLBPxJTI=",
+        "lastModified": 1733064805,
+        "narHash": "sha256-7NbtSLfZO0q7MXPl5hzA0sbVJt6pWxxtGWbaVUDDmjs=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "f40efe1ce90f9cd692c8d56d9305fa6b9c07f211",
+        "rev": "31d66ae40417bb13765b0ad75dd200400e98de84",
         "type": "github"
       },
       "original": {
@@ -31,7 +31,23 @@
         "type": "github"
       }
     },
-    "plugins-lnchangemode": {
+    "plugins-chsh": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1654886524,
+        "narHash": "sha256-TkCFvIZ5TOdjs8+pbsWQvWh0QdllMfYAJ28yFHOtBtY=",
+        "owner": "Djancyp",
+        "repo": "cheat-sheet",
+        "rev": "772556d803dbcee914902ae775cca68378bcc90a",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Djancyp",
+        "repo": "cheat-sheet",
+        "type": "github"
+      }
+    },
+    "plugins-line-number-change-mode": {
       "flake": false,
       "locked": {
         "lastModified": 1729012619,
@@ -47,11 +63,29 @@
         "type": "github"
       }
     },
+    "plugins-virtcolumn": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1702641344,
+        "narHash": "sha256-4Q7dbgu/YxpHTLrMgGzJ2DaAuaH9VhkVTrtlbFmPYZY=",
+        "owner": "xiyaowong",
+        "repo": "virtcolumn.nvim",
+        "rev": "4d385b4aa42aa3af6fa2cb8527462fa4badbd163",
+        "type": "github"
+      },
+      "original": {
+        "owner": "xiyaowong",
+        "repo": "virtcolumn.nvim",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "nixCats": "nixCats",
         "nixpkgs": "nixpkgs",
-        "plugins-lnchangemode": "plugins-lnchangemode"
+        "plugins-chsh": "plugins-chsh",
+        "plugins-line-number-change-mode": "plugins-line-number-change-mode",
+        "plugins-virtcolumn": "plugins-virtcolumn"
       }
     }
   },

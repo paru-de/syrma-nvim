@@ -10,8 +10,18 @@
     nixCats.url = "github:BirdeeHub/nixCats-nvim";
 
     # change the color and text decoration of a line number when the mode changes
-    "plugins-lnchangemode" = {
+    "plugins-line-number-change-mode" = {
       url = "github:sethen/line-number-change-mode.nvim";
+      flake = false;
+    };
+    # thin vim.opt.colorcolumn
+    "plugins-virtcolumn" = {
+      url = "github:xiyaowong/virtcolumn.nvim";
+      flake = false;
+    };
+    # Code cheat sheet
+    "plugins-chsh" = {
+      url = "github:Djancyp/cheat-sheet";
       flake = false;
     };
 
@@ -163,6 +173,16 @@
             oil-nvim
             otter-nvim
             nvim-web-devicons
+            pkgs.neovimPlugins.line-number-change-mode
+            pkgs.neovimPlugins.virtcolumn
+            auto-save-nvim
+            neo-tree-nvim
+            nui-nvim # dep of neo-tree
+            cheatsheet-nvim
+            pkgs.neovimPlugins.chsh
+            popup-nvim # dep of cheatsheet-nvim
+            nvim-coverage
+            toggleterm-nvim
           ];
         };
         # You can retreive information from the

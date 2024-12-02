@@ -1,12 +1,3 @@
-local colorschemeName = nixCats('colorscheme')
-if not require('nixCatsUtils').isNixCats then
-  colorschemeName = 'onedark'
-end
--- Could I lazy load on colorscheme with lze?
--- sure. But I was going to call vim.cmd.colorscheme() during startup anyway
--- this is just an example, feel free to do a better job!
-vim.cmd.colorscheme(colorschemeName)
-
 -- NOTE: you can check if you included the category with the thing wherever you want.
 if nixCats('general.extra') then
   -- I didnt want to bother with lazy loading this.
@@ -47,10 +38,17 @@ if nixCats('general.extra') then
   vim.keymap.set("n", "<leader>-", "<cmd>Oil .<CR>", { noremap = true, desc = 'Open nvim root directory' })
 end
 
+-- Auto Save
+require("auto-save").setup({
+  event = { 'InsertLeave', 'TextChanged' }, -- optional for lazy loading on trigger events
+  opts = {
+  },
+})
+
 require('lze').load {
-  { import = "myLuaConf.plugins.telescope", },
-  { import = "myLuaConf.plugins.treesitter", },
-  { import = "myLuaConf.plugins.completion", },
+  { import = "myLuaConf.plugins.core.telescope", },
+  { import = "myLuaConf.plugins.core.treesitter", },
+  { import = "myLuaConf.plugins.core.completion", },
   {
     "lazydev.nvim",
     for_cat = 'neonixdev',
@@ -75,9 +73,9 @@ require('lze').load {
     cmd = { "MarkdownPreview", "MarkdownPreviewStop", "MarkdownPreviewToggle", },
     ft = "markdown",
     keys = {
-      {"<leader>mp", "<cmd>MarkdownPreview <CR>", mode = {"n"}, noremap = true, desc = "markdown preview"},
-      {"<leader>ms", "<cmd>MarkdownPreviewStop <CR>", mode = {"n"}, noremap = true, desc = "markdown preview stop"},
-      {"<leader>mt", "<cmd>MarkdownPreviewToggle <CR>", mode = {"n"}, noremap = true, desc = "markdown preview toggle"},
+      { "<leader>mp", "<cmd>MarkdownPreview <CR>",       mode = { "n" }, noremap = true, desc = "markdown preview" },
+      { "<leader>ms", "<cmd>MarkdownPreviewStop <CR>",   mode = { "n" }, noremap = true, desc = "markdown preview stop" },
+      { "<leader>mt", "<cmd>MarkdownPreviewToggle <CR>", mode = { "n" }, noremap = true, desc = "markdown preview toggle" },
     },
     before = function(plugin)
       vim.g.mkdp_auto_close = 0
@@ -159,8 +157,7 @@ require('lze').load {
     -- ft = "",
     -- keys = "",
     -- colorscheme = "",
-    after = function (plugin)
-
+    after = function(plugin)
       require('lualine').setup({
         options = {
           icons_enabled = false,
@@ -181,7 +178,7 @@ require('lze').load {
               'filename', path = 3, status = true,
             },
           },
-          lualine_x = {'filetype'},
+          lualine_x = { 'filetype' },
         },
         tabline = {
           lualine_a = { 'buffers' },
@@ -200,7 +197,7 @@ require('lze').load {
     -- ft = "",
     -- keys = "",
     -- colorscheme = "",
-    after = function (plugin)
+    after = function(plugin)
       require('gitsigns').setup({
         -- See `:help gitsigns.txt`
         signs = {
@@ -284,29 +281,30 @@ require('lze').load {
     -- ft = "",
     -- keys = "",
     -- colorscheme = "",
-    after = function (plugin)
+    after = function(plugin)
       require('which-key').setup({
       })
       require('which-key').add {
-        { "<leader><leader>", group = "buffer commands" },
+        { "<leader><leader>",  group = "buffer commands" },
         { "<leader><leader>_", hidden = true },
-        { "<leader>c", group = "[c]ode" },
-        { "<leader>c_", hidden = true },
-        { "<leader>d", group = "[d]ocument" },
-        { "<leader>d_", hidden = true },
-        { "<leader>g", group = "[g]it" },
-        { "<leader>g_", hidden = true },
-        { "<leader>m", group = "[m]arkdown" },
-        { "<leader>m_", hidden = true },
-        { "<leader>r", group = "[r]ename" },
-        { "<leader>r_", hidden = true },
-        { "<leader>s", group = "[s]earch" },
-        { "<leader>s_", hidden = true },
-        { "<leader>t", group = "[t]oggles" },
-        { "<leader>t_", hidden = true },
-        { "<leader>w", group = "[w]orkspace" },
-        { "<leader>w_", hidden = true },
+        { "<leader>c",         group = "[c]ode" },
+        { "<leader>c_",        hidden = true },
+        { "<leader>d",         group = "[d]ocument" },
+        { "<leader>d_",        hidden = true },
+        { "<leader>g",         group = "[g]it" },
+        { "<leader>g_",        hidden = true },
+        { "<leader>m",         group = "[m]arkdown" },
+        { "<leader>m_",        hidden = true },
+        { "<leader>r",         group = "[r]ename" },
+        { "<leader>r_",        hidden = true },
+        { "<leader>s",         group = "[s]earch" },
+        { "<leader>s_",        hidden = true },
+        { "<leader>t",         group = "[t]oggles" },
+        { "<leader>t_",        hidden = true },
+        { "<leader>w",         group = "[w]orkspace" },
+        { "<leader>w_",        hidden = true },
       }
     end,
   },
+
 }

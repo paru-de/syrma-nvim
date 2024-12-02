@@ -1,31 +1,37 @@
--- NOTE: various, non-plugin config
-require("myLuaConf.opts_and_keys")
-
--- NOTE: register the extra lze handlers because we want to use them.
+-- Options
+require("myLuaConf.options.nvim")
+require("myLuaConf.options.keybinds") -- Register the extra lze handlers
 require("lze").register_handlers(require("lze.x"))
--- NOTE: also add another one that makes enabling a spec for a category nicer
 require("lze").register_handlers(require("nixCatsUtils.lzUtils").for_cat)
 
--- NOTE: general plugins
+-- [[ Enable plugins ]]
+
+-- Small plugins
 require("myLuaConf.plugins")
 
--- NOTE: obviously, more plugins, but more organized by what they do below
-
--- I dont need to explain why this is called lsp right?
-require("myLuaConf.LSPs")
-
--- NOTE: we even ask nixCats if we included our debug stuff in this setup! (we didnt)
--- But we have a good base setup here as an example anyway!
+-- Core Plugins
+require("myLuaConf.plugins.core.lsp")
+require("myLuaConf.plugins.core.format")
+require("myLuaConf.plugins.core.completion")
+require("myLuaConf.plugins.core.treesitter")
+require("myLuaConf.plugins.core.telescope")
 if nixCats("debug") then
-	require("myLuaConf.debug")
+	require("myLuaConf.plugins.core.debug")
 end
--- NOTE: we included these though! Or, at least, the category is enabled.
--- these contain nvim-lint and conform setups.
 if nixCats("lint") then
-	require("myLuaConf.lint")
+	require("myLuaConf.plugins.core.lint")
 end
-if nixCats("format") then
-	require("myLuaConf.format")
-end
--- NOTE: I didnt actually include any linters or formatters in this configuration,
--- but it is enough to serve as an example.
+
+-- UI Plugins
+require("myLuaConf.plugins.ui.lnchangemode") -- show editor mode on active line number
+require("myLuaConf.plugins.ui.neo-tree")
+
+-- Help
+require("myLuaConf.plugins.help.chsh")
+require("myLuaConf.plugins.help.chsh-vim")
+
+-- Tests
+require("myLuaConf.plugins.tests.coverage")
+
+-- QoL
+require("myLuaConf.plugins.qol.toggleterm")

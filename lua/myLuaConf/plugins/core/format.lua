@@ -4,11 +4,7 @@ require('lze').load {
     for_cat = 'format',
     cmd = { "ConformInfo" },
     event = "BufWritePre",
-    -- ft = "",
-    -- keys = {
-    --   { "<leader>FF", desc = "[F]ormat [F]ile" },
-    -- },
-    -- colorscheme = "",
+
     after = function(plugin)
       local conform = require("conform")
 
@@ -17,14 +13,12 @@ require('lze').load {
           -- NOTE: download some formatters in lspsAndRuntimeDeps
           -- and configure them here
           lua = { "stylua" },
-          go = { "gofumpt", "gofmt", "golint" },
-          -- templ = { "templ" },
-          -- Conform will run multiple formatters sequentially
-          -- python = { "isort", "black" },
+          go = { "gofumpt", "golint" }, -- Run all formatters sequentially
           -- Use a sub-list to run only the first available formatter
           -- javascript = { { "prettierd", "prettier" } },
         },
         notify_on_error = false,
+
         format_on_save = function(bufnr)
           local disable_filetypes = { c = true, cpp = true }
           local lsp_format_opt
@@ -39,14 +33,6 @@ require('lze').load {
           }
         end,
       })
-
-      -- vim.keymap.set({ "n", "v" }, "<leader>FF", function()
-      --   conform.format({
-      --     lsp_fallback = true,
-      --     async = false,
-      --     timeout_ms = 1000,
-      --   })
-      -- end, { desc = "[F]ormat [F]ile" })
     end,
   },
 }

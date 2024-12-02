@@ -1,0 +1,115 @@
+## navigation
+Leap Jump | <C-q>{char1}{char2} 
+Leap Jump to other window | <S-q>{char1}{char2}
+Leap Jump backwards in Visual mode | <C-q>{char1}{char2}
+Leap Jump forwards in Visual mode | <S-q>{char1}{char2}
+First non-blank char in line | ^
+Move to line n (not relative) | n G
+
+## editing
+Insert mode: Delete forward | <C-f>
+Insert mode: Delete backward | <C-b>
+
+## save
+Save selection to FILE | :w FILE
+Insert content from FILE below cursor | :r FILE
+Insert command output | :r!date
+## tmux
+Leader | <C-Space>
+Panes: Split horizontal | s
+Panes: Split vertical | v
+Panes: Resize | arrows
+Panes: Previous | ,
+Panes: Next | .
+Panes: Select by number | 1-5
+Panes: Show numbers | /
+Panes: Kill Pane | q
+Windows: New | w
+Windows: Rename | n
+Windows: Close | x
+Windows: Previous | k
+Windows: Next | j
+Windows: Choose | c
+Sessions: New | r
+Sessions: Rename | t
+Sessions: Kill | g
+Sessions: Choose | f
+Sessions: Tree | b
+Sessions: Detach | d
+
+## code
+Diagnostics: Show Diagnostics popup | <C-W d>
+LSP: Show help for selected keyword | <S-K>
+
+## mini.surround
+Surround: Add (visual or on motion) | sa
+Surround: Delete | sd
+Surround: Replace | sr
+Surround: Find | sf / sF
+SurroundL Highlight | sh
+
+## kde
+KDE: Show Clipboard | meta v
+KDE: Show Activities | meta a
+KDE: Cycle through Activities | meta shift a
+KDE: Kill active indow | meta q
+KDE: Focus window | meta hjkl
+KDE: Focus next/previous window | meta ,.
+KDE: Resize window | meta ctrl hjkl
+KDE: Move window | meta shift hjkl
+KDE: Float window | meta shift f
+KDE: Fullscreen | meta f
+KDE: Move window to next screen | ctrl shift l/r
+KDE: Toggle Overview | alt shift w
+KDE: Invert window | meta ctrl i
+KDE : Toggle titlebar | meta shift t
+KDE: Move mouse to focus | meta z
+KDE: Move focus to other screen | meta ;'
+KDE: Increase/Decrease master | meta i/o
+KDE: Switch layout | meta \|
+KDE: Rotate layout | meta r
+KDE: Virtual Desktop up/down | alt shift jk
+KDE: Virtual desktop left/right | alt shift hl
+KDE: Switch to virtual desktop n | alt shift n
+KDE: Toggle virtual desktop grid | alt shift q
+KDE: Move window to virtual desktop | ctrl shift hjkl
+
+## terminal
+Terminal: Suspend job | ctrl z
+Terminal: Resume (job n) | $ fg %n
+Terminal: List jobs | $ jobs
+
+## hyprland
+Hypr: main mod | super
+Hypr: Window mod | shift
+Hypr: Layout mod | alt
+Hypr: Workspace mod | ctrl
+Hypr: Clipboard | mod c
+Hypr / App: Runner | mod space
+Hypr / App: Terminal | mod enter
+Hypr / App: File manager | mod t
+Hypr / App: Browser | mod w
+Hypr / App: Fuzzyfinder | mod s
+Hypr / App: Emojis | mod e
+Hypr / App: Toggle waybar | mod p
+Hypr / App: Reload waybar | mod shift p
+Hypr / Window: Toggle float | mod shift f
+Hypr / Window: Toggle fullscreen | mod f
+Hypr / Window: Kill active | mod q
+Hypr / Window: Resize | mod alt shift hjkl
+Hypr / Window: Move | mod shift hjkl
+Hypr / Window: Focus | mod hjkl
+Hypr / Window: Move WS and follow | mod ctrl 1-0, ,.
+Hypr / Window: Move WS silent | mod shift 1-0, ,.						
+Hypr / Layout: Add/Remove master | mod alt - =
+Hypr / Layout: Rotate | mod alt 
+Hypr / Workspace: Toggle Special 1/2 | mod d x
+Hypr / Workspace: Move to Special 1/2 | mod shift d x
+Hypr / Workspace: Switch | mod 1-0
+Hypr / Workspace: Cycle open | mod , .
+Hypr / Workspace: Cycle previous | mod tab
+Hypr / Workspace: Cycle previous on monitor | mod shift tab
+Hypr / Capture: Window | mod ctrl print
+Hypr / Capture: Region | mod shift print
+Hypr / Capture: Monitor | mod print
+

@@ -42,15 +42,15 @@ if nixCats('neonixdev') then
       if nixCats.extra("nixdExtras.systemCFGname") then
         -- (builtins.getFlake "<path_to_system_flake>").nixosConfigurations."<name>".options
         servers.nixd.nixd.options.nixos = {
-          expr = [[(builtins.getFlake "]] .. flakePath ..  [[").nixosConfigurations."]] ..
-            nixCats.extra("nixdExtras.systemCFGname") .. [[".options]]
+          expr = [[(builtins.getFlake "]] .. flakePath .. [[").nixosConfigurations."]] ..
+              nixCats.extra("nixdExtras.systemCFGname") .. [[".options]]
         }
       end
       if nixCats.extra("nixdExtras.homeCFGname") then
         -- (builtins.getFlake "<path_to_system_flake>").homeConfigurations."<name>".options
         servers.nixd.nixd.options["home-manager"] = {
           expr = [[(builtins.getFlake "]] .. flakePath .. [[").homeConfigurations."]]
-            .. nixCats.extra("nixdExtras.homeCFGname") .. [[".options]]
+              .. nixCats.extra("nixdExtras.homeCFGname") .. [[".options]]
         }
       end
     end
@@ -58,7 +58,6 @@ if nixCats('neonixdev') then
     servers.rnix = {}
     servers.nil_ls = {}
   end
-
 end
 
 if nixCats('go') then
@@ -96,7 +95,7 @@ end
 vim.api.nvim_create_autocmd('LspAttach', {
   group = vim.api.nvim_create_augroup('nixCats-lsp-attach', { clear = true }),
   callback = function(event)
-    require('myLuaConf.LSPs.caps-on_attach').on_attach(vim.lsp.get_client_by_id(event.data.client_id), event.buf)
+    require('myLuaConf.plugins.core.caps-on_attach').on_attach(vim.lsp.get_client_by_id(event.data.client_id), event.buf)
   end
 })
 
@@ -114,9 +113,9 @@ require('lze').load {
       if require('nixCatsUtils').isNixCats then
         for server_name, cfg in pairs(servers) do
           require('lspconfig')[server_name].setup({
-            capabilities = require('myLuaConf.LSPs.caps-on_attach').get_capabilities(server_name),
+            capabilities = require('myLuaConf.plugins.core.caps-on_attach').get_capabilities(server_name),
             -- this line is interchangeable with the above LspAttach autocommand
-            -- on_attach = require('myLuaConf.LSPs.caps-on_attach').on_attach,
+            -- on_attach = require('myLuaConf.core.caps-on_attach').on_attach,
             settings = cfg,
             filetypes = (cfg or {}).filetypes,
             cmd = (cfg or {}).cmd,
@@ -132,9 +131,9 @@ require('lze').load {
         mason_lspconfig.setup_handlers {
           function(server_name)
             require('lspconfig')[server_name].setup {
-              capabilities = require('myLuaConf.LSPs.caps-on_attach').get_capabilities(server_name),
+              capabilities = require('myLuaConf.plugins.core.caps-on_attach').get_capabilities(server_name),
               -- this line is interchangeable with the above LspAttach autocommand
-              -- on_attach = require('myLuaConf.LSPs.caps-on_attach').on_attach,
+              -- on_attach = require('myLuaConf.plugins.core.caps-on_attach').on_attach,
               settings = servers[server_name],
               filetypes = (servers[server_name] or {}).filetypes,
             }

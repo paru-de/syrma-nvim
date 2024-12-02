@@ -70,7 +70,7 @@ return {
     "luasnip",
     for_cat = 'general.cmp',
     dep_of = { "nvim-cmp" },
-    after = function (plugin)
+    after = function(plugin)
       local luasnip = require 'luasnip'
       require('luasnip.loaders.from_vscode').lazy_load()
       luasnip.config.setup {}
@@ -78,9 +78,9 @@ return {
       local ls = require('luasnip')
 
       vim.keymap.set({ "i", "s" }, "<M-n>", function()
-          if ls.choice_active() then
-              ls.change_choice(1)
-          end
+        if ls.choice_active() then
+          ls.change_choice(1)
+        end
       end)
     end,
   },
@@ -93,7 +93,7 @@ return {
     -- ft = "",
     -- keys = "",
     -- colorscheme = "",
-    after = function (plugin)
+    after = function(plugin)
       -- [[ Configure nvim-cmp ]]
       -- See `:help cmp`
       local cmp = require 'cmp'
@@ -105,8 +105,9 @@ return {
           format = lspkind.cmp_format {
             mode = 'text',
             with_text = true,
-            maxwidth = 50, -- prevent the popup from showing more than provided characters (e.g 50 will not show more than 50 characters)
+            maxwidth = 50,         -- prevent the popup from showing more than provided characters (e.g 50 will not show more than 50 characters)
             ellipsis_char = '...', -- when popup menu exceed maxwidth, the truncated part would show ellipsis_char instead (must define maxwidth first)
+
 
             menu = {
               buffer = '[BUF]',
@@ -118,6 +119,8 @@ return {
               luasnip = '[SNIP]',
             },
           },
+          expandable_indicator = true,
+          fields = { 'abbr', 'kind', 'menu' },
         },
         snippet = {
           expand = function(args)
@@ -125,10 +128,10 @@ return {
           end,
         },
         mapping = cmp.mapping.preset.insert {
-          ['<C-p>'] = cmp.mapping.scroll_docs(-4),
-          ['<C-n>'] = cmp.mapping.scroll_docs(4),
+          ['<C-b>'] = cmp.mapping.scroll_docs(-4),
+          ['<C-f>'] = cmp.mapping.scroll_docs(4),
           ['<C-Space>'] = cmp.mapping.complete {},
-          ['<CR>'] = cmp.mapping.confirm {
+          ['<C-a>'] = cmp.mapping.confirm {
             behavior = cmp.ConfirmBehavior.Replace,
             select = true,
           },
@@ -154,8 +157,8 @@ return {
 
         sources = cmp.config.sources {
           -- The insertion order influences the priority of the sources
-          { name = 'nvim_lsp'--[[ , keyword_length = 3 ]] },
-          { name = 'nvim_lsp_signature_help'--[[ , keyword_length = 3  ]]},
+          { name = 'nvim_lsp' --[[ , keyword_length = 3 ]] },
+          { name = 'nvim_lsp_signature_help' --[[ , keyword_length = 3  ]] },
           { name = 'path' },
           { name = 'luasnip' },
           { name = 'buffer' },
@@ -172,12 +175,13 @@ return {
       cmp.setup.filetype('lua', {
         sources = cmp.config.sources {
           { name = 'nvim_lua' },
-          { name = 'nvim_lsp'--[[ , keyword_length = 3  ]]},
-          { name = 'nvim_lsp_signature_help'--[[ , keyword_length = 3  ]]},
+          { name = 'nvim_lsp' --[[ , keyword_length = 3  ]] },
+          { name = 'nvim_lsp_signature_help' --[[ , keyword_length = 3  ]] },
           { name = 'path' },
           { name = 'luasnip' },
           { name = 'buffer' },
-        },{
+        },
+        {
           {
             name = 'cmdline',
             option = {
@@ -191,7 +195,7 @@ return {
       cmp.setup.cmdline({ '/', '?' }, {
         mapping = cmp.mapping.preset.cmdline(),
         sources = {
-          { name = 'nvim_lsp_document_symbol'--[[ , keyword_length = 3  ]]},
+          { name = 'nvim_lsp_document_symbol' --[[ , keyword_length = 3  ]] },
           { name = 'buffer' },
           { name = 'cmdline_history' },
         },
