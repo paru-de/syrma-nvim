@@ -144,8 +144,8 @@
         ];
         # and easily check if they are included in lua
         format = with pkgs; [
-          gofumpt
           alejandra
+          gofumpt
           stylua
         ];
         neonixdev = {
@@ -164,30 +164,30 @@
           # you can make subcategories!!!
           # (always isnt a special name, just the one I chose for this subcategory)
           always = [
-            lze
-            vim-repeat
-            plenary-nvim
             conform-nvim
+            lze
+            plenary-nvim
+            vim-repeat
           ];
           extra = [
-            otter-nvim
-            nvim-web-devicons
-            pkgs.neovimPlugins.line-number-change-mode
-            pkgs.neovimPlugins.virtcolumn
+            # todo: otter-nvim
             auto-save-nvim
-            neo-tree-nvim
-            nui-nvim # dep of neo-tree
             cheatsheet-nvim
-            pkgs.neovimPlugins.chsh
-            popup-nvim # dep of cheatsheet-nvim
-            nvim-coverage
-            toggleterm-nvim
-            mini-nvim
-            todo-comments-nvim
-            nvim-autopairs
-            nvim-highlight-colors
             cinnamon-nvim
             leap-nvim
+            mini-nvim
+            neo-tree-nvim
+            nui-nvim # dep of neo-tree
+            nvim-autopairs
+            nvim-coverage
+            nvim-highlight-colors
+            nvim-web-devicons
+            pkgs.neovimPlugins.chsh
+            pkgs.neovimPlugins.line-number-change-mode
+            pkgs.neovimPlugins.virtcolumn
+            popup-nvim # dep of cheatsheet-nvim
+            todo-comments-nvim
+            toggleterm-nvim
           ];
         };
         # You can retreive information from the
@@ -197,10 +197,6 @@
           builtins.getAttr (categories.colorscheme or "onedark") {
             # Theme switcher without creating a new category
             "onedark" = onedark-nvim;
-            "catppuccin" = catppuccin-nvim;
-            "catppuccin-mocha" = catppuccin-nvim;
-            "tokyonight" = tokyonight-nvim;
-            "tokyonight-day" = tokyonight-nvim;
           }
         );
         # This is obviously a fairly basic usecase for this, but still nice.
@@ -237,19 +233,18 @@
         ];
         general = {
           cmp = with pkgs.vimPlugins; [
-            # cmp stuff
-            nvim-cmp
-            luasnip
-            friendly-snippets
-            cmp_luasnip
             cmp-buffer
-            cmp-path
-            cmp-nvim-lua
-            cmp-nvim-lsp
             cmp-cmdline
-            cmp-nvim-lsp-signature-help
             cmp-cmdline-history
+            cmp-nvim-lsp
+            cmp-nvim-lsp-signature-help
+            cmp-nvim-lua
+            cmp-path
+            cmp_luasnip
+            friendly-snippets
             lspkind-nvim
+            luasnip
+            nvim-cmp
           ];
           treesitter = with pkgs.vimPlugins; [
             nvim-treesitter-textobjects
@@ -264,23 +259,23 @@
           ];
           telescope = with pkgs.vimPlugins; [
             telescope-fzf-native-nvim
-            telescope-ui-select-nvim
             telescope-nvim
+            telescope-ui-select-nvim
           ];
           always = with pkgs.vimPlugins; [
-            nvim-lspconfig
             gitsigns-nvim
-            vim-sleuth
+            nvim-lspconfig
             vim-fugitive
             vim-rhubarb
+            vim-sleuth
           ];
           extra = with pkgs.vimPlugins; [
-            fidget-nvim
-            which-key-nvim
             comment-nvim
-            undotree
+            fidget-nvim
             indent-blankline-nvim
+            undotree
             vim-startuptime
+            which-key-nvim
             yazi-nvim
           ];
         };
