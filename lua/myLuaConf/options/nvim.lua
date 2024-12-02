@@ -27,6 +27,13 @@ require("onedark").setup({
 	},
 })
 require("onedark").load()
+-- Overriding some backgrounds  TODO: make popups more visible against bg (border possible?)
+vim.api.nvim_set_hl(0, "NormalFloat", { bg = "#202020" })
+vim.api.nvim_set_hl(0, "FloatBorder", { bg = "#202020", fg = "#bbc2cf" })
+vim.api.nvim_set_hl(0, "Pmenu", { bg = "#272727", fg = "#bbc2cf" })
+-- TODO: define in mini.lua, double check values; this isn't enough and looks off
+vim.api.nvim_set_hl(0, "MiniNotifyBorder", { bg = "#202020", fg = "#bbc2cf" })
+vim.api.nvim_set_hl(0, "MiniNotifyNormal", { bg = "#202020", fg = "#bbc2cf" })
 vim.opt.termguicolors = true
 
 -- [[ Setting options ]]
