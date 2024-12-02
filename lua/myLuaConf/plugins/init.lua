@@ -1,22 +1,17 @@
 -- Auto Save
 require("auto-save").setup({
-	event = { "InsertLeave", "TextChanged" }, -- optional for lazy loading on trigger events
 	opts = {},
 })
 
--- NOTE: Todo Comments
+-- Todo Comments
 require("todo-comments").setup({
-	event = "VimEnter",
-	dependencies = { "nvim-lua/plenary.nvim" },
+
 	opts = { signs = false },
 })
 
+-- Automatically insert pairs
 require("nvim-autopairs").setup({
-	event = 'InsertEnter',
-	-- Optional dependency
-	dependencies = { 'hrsh7th/nvim-cmp' },
 	config = function()
-		require('nvim-autopairs').setup {}
 		-- If you want to automatically add `(` after selecting a function or method
 		local cmp_autopairs = require 'nvim-autopairs.completion.cmp'
 		local cmp = require 'cmp'
@@ -24,6 +19,15 @@ require("nvim-autopairs").setup({
 	end,
 
 })
+
+-- Show color codes as colors
+require("nvim-highlight-colors").setup({})
+
+-- Smooth scrolling
+require("cinnamon").setup({})
+
+-- Jump around quickly
+require("leap").setup({})
 
 require("lze").load({
 	{ import = "myLuaConf.plugins.core.telescope" },

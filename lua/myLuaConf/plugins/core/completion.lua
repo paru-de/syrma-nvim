@@ -175,6 +175,8 @@ return {
 				},
 			})
 
+
+
 			cmp.setup.filetype("lua", {
 				sources = cmp.config.sources({
 					{ name = "nvim_lua" },
@@ -222,6 +224,9 @@ return {
 					{ name = "path" },
 				}),
 			})
+			-- Add nvim-autopairs integration
+			local cmp_autopairs = require("nvim-autopairs.completion.cmp")
+			cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done())
 		end,
 	},
 }

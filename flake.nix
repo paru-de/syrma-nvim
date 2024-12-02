@@ -185,6 +185,9 @@
             mini-nvim
             todo-comments-nvim
             nvim-autopairs
+            nvim-highlight-colors
+            cinnamon-nvim
+            leap-nvim
           ];
         };
         # You can retreive information from the
@@ -273,16 +276,12 @@
           ];
           extra = with pkgs.vimPlugins; [
             fidget-nvim
-            # lualine-lsp-progress
             which-key-nvim
             comment-nvim
             undotree
             indent-blankline-nvim
             vim-startuptime
             yazi-nvim
-            # If it was included in your flake inputs as plugins-hlargs,
-            # this would be how to add that plugin in your config.
-            # pkgs.neovimPlugins.hlargs
           ];
         };
       };

@@ -115,3 +115,7 @@ vim.api.nvim_set_keymap('n', '<C-Up>', '<cmd>Yazi toggle<CR>',
 -- UndoTree
 vim.api.nvim_set_keymap('n', '<leader>U', '<cmd>UndotreeToggle<CR>',
 	{ noremap = true, silent = true, desc = 'Undo Tree' })
+
+-- Leap
+vim.keymap.set('n', '<C-q>', '<Plug>(leap)')
+vim.keymap.set('n', '<S-q>', '<Plug>(leap-from-window)')
