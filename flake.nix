@@ -226,7 +226,6 @@
           conform-nvim
         ];
         markdown = with pkgs.vimPlugins; [
-          markdown-preview-nvim
         ];
         neonixdev = with pkgs.vimPlugins; [
           lazydev-nvim

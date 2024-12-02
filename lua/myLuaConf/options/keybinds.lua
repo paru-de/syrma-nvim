@@ -111,3 +111,7 @@ vim.api.nvim_set_keymap('n', '<leader>F', '<cmd>Yazi cwd<CR>',
 
 vim.api.nvim_set_keymap('n', '<C-Up>', '<cmd>Yazi toggle<CR>',
 	{ noremap = true, silent = true, desc = 'Resume the last yazi session' })
+
+-- UndoTree
+vim.api.nvim_set_keymap('n', '<leader>U', '<cmd>UndotreeToggle<CR>',
+	{ noremap = true, silent = true, desc = 'Undo Tree' })
