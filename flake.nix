@@ -183,6 +183,8 @@
             nvim-coverage
             toggleterm-nvim
             mini-nvim
+            todo-comments-nvim
+            nvim-autopairs
           ];
         };
         # You can retreive information from the
