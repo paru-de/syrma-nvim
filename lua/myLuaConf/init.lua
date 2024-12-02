@@ -26,6 +26,7 @@ end
 require("myLuaConf.plugins.ui.lnchangemode") -- show editor mode on active line number
 require("myLuaConf.plugins.ui.neo-tree")
 require("myLuaConf.plugins.ui.which-key")
+require("myLuaConf.plugins.ui.yazi")
 
 -- Help
 require("myLuaConf.plugins.help.chsh")
@@ -36,3 +37,4 @@ require("myLuaConf.plugins.tests.coverage")
 
 -- QoL
 require("myLuaConf.plugins.qol.toggleterm")
+require("myLuaConf.plugins.qol.mini")

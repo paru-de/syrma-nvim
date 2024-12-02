@@ -1,43 +1,3 @@
--- NOTE: you can check if you included the category with the thing wherever you want.
-if nixCats('general.extra') then
-  -- I didnt want to bother with lazy loading this.
-  -- I could put it in opt and put it in a spec anyway
-  -- and then not set any handlers and it would load at startup,
-  -- but why... I guess I could make it load
-  -- after the other lze definitions in the next call using priority value?
-  -- didnt seem necessary.
-  vim.g.loaded_netrwPlugin = 1
-  require("oil").setup({
-    default_file_explorer = true,
-    columns = {
-      "icon",
-      "permissions",
-      "size",
-      -- "mtime",
-    },
-    keymaps = {
-      ["g?"] = "actions.show_help",
-      ["<CR>"] = "actions.select",
-      ["<C-s>"] = "actions.select_vsplit",
-      ["<C-h>"] = "actions.select_split",
-      ["<C-t>"] = "actions.select_tab",
-      ["<C-p>"] = "actions.preview",
-      ["<C-c>"] = "actions.close",
-      ["<C-l>"] = "actions.refresh",
-      ["-"] = "actions.parent",
-      ["_"] = "actions.open_cwd",
-      ["`"] = "actions.cd",
-      ["~"] = "actions.tcd",
-      ["gs"] = "actions.change_sort",
-      ["gx"] = "actions.open_external",
-      ["g."] = "actions.toggle_hidden",
-      ["g\\"] = "actions.toggle_trash",
-    },
-  })
-  vim.keymap.set("n", "-", "<cmd>Oil<CR>", { noremap = true, desc = 'Open Parent Directory' })
-  vim.keymap.set("n", "<leader>-", "<cmd>Oil .<CR>", { noremap = true, desc = 'Open nvim root directory' })
-end
-
 -- Auto Save
 require("auto-save").setup({
   event = { 'InsertLeave', 'TextChanged' }, -- optional for lazy loading on trigger events
@@ -107,15 +67,15 @@ require('lze').load {
       require("ibl").setup()
     end,
   },
-  {
-    "nvim-surround",
-    for_cat = 'general.always',
-    event = "DeferredUIEnter",
-    -- keys = "",
-    after = function(plugin)
-      require('nvim-surround').setup()
-    end,
-  },
+  -- {
+  --   "nvim-surround",
+  --   for_cat = 'general.always',
+  --   event = "DeferredUIEnter",
+  --   -- keys = "",
+  --   after = function(plugin)
+  --     require('nvim-surround').setup()
+  --   end,
+  -- },
   {
     "vim-startuptime",
     for_cat = 'general.extra',
@@ -149,46 +109,6 @@ require('lze').load {
   --     vim.cmd([[hi link @lsp.type.parameter Hlargs]])
   --   end,
   -- },
-  {
-    "lualine.nvim",
-    for_cat = 'general.always',
-    -- cmd = { "" },
-    event = "DeferredUIEnter",
-    -- ft = "",
-    -- keys = "",
-    -- colorscheme = "",
-    after = function(plugin)
-      require('lualine').setup({
-        options = {
-          icons_enabled = false,
-          theme = "onedark",
-          component_separators = '|',
-          section_separators = '',
-        },
-        sections = {
-          lualine_c = {
-            {
-              'filename', path = 1, status = true,
-            },
-          },
-        },
-        inactive_sections = {
-          lualine_b = {
-            {
-              'filename', path = 3, status = true,
-            },
-          },
-          lualine_x = { 'filetype' },
-        },
-        tabline = {
-          lualine_a = { 'buffers' },
-          -- if you use lualine-lsp-progress, I have mine here instead of fidget
-          -- lualine_b = { 'lsp_progress', },
-          lualine_z = { 'tabs' }
-        },
-      })
-    end,
-  },
   {
     "gitsigns.nvim",
     for_cat = 'general.always',

@@ -170,7 +170,6 @@
             conform-nvim
           ];
           extra = [
-            oil-nvim
             otter-nvim
             nvim-web-devicons
             pkgs.neovimPlugins.line-number-change-mode
@@ -183,6 +182,7 @@
             popup-nvim # dep of cheatsheet-nvim
             nvim-coverage
             toggleterm-nvim
+            mini-nvim
           ];
         };
         # You can retreive information from the
@@ -265,12 +265,10 @@
           ];
           always = with pkgs.vimPlugins; [
             nvim-lspconfig
-            lualine-nvim
             gitsigns-nvim
             vim-sleuth
             vim-fugitive
             vim-rhubarb
-            nvim-surround
           ];
           extra = with pkgs.vimPlugins; [
             fidget-nvim
@@ -280,6 +278,7 @@
             undotree
             indent-blankline-nvim
             vim-startuptime
+            yazi-nvim
             # If it was included in your flake inputs as plugins-hlargs,
             # this would be how to add that plugin in your config.
             # pkgs.neovimPlugins.hlargs

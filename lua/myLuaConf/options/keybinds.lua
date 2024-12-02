@@ -101,3 +101,13 @@ vim.api.nvim_set_keymap('n', '<leader>tg', '<cmd>lua LazyGit_toggle()<CR>',
 	{ noremap = true, silent = true, desc = 'Toggle [G]it (LazyGit)' })
 vim.api.nvim_set_keymap('n', '<leader>Tr', '<cmd>lua GoTest_toggle()<CR>',
 	{ noremap = true, silent = true, desc = 'Go: [R]un tests' })
+
+-- Yazi
+vim.api.nvim_set_keymap('n', '<leader>f', '<cmd>Yazi<CR>',
+	{ noremap = true, silent = true, desc = 'Open yazi at the current file' })
+
+vim.api.nvim_set_keymap('n', '<leader>F', '<cmd>Yazi cwd<CR>',
+	{ noremap = true, silent = true, desc = "Open the file manager in nvim's working directory" })
+
+vim.api.nvim_set_keymap('n', '<C-Up>', '<cmd>Yazi toggle<CR>',
+	{ noremap = true, silent = true, desc = 'Resume the last yazi session' })
