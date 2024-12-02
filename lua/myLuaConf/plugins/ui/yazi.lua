@@ -2,11 +2,7 @@ require("lze").load({
 	{
 		"yazi.nvim",
 		for_cat = "general.extra",
-		-- cmd = { "" },
 		event = "DeferredUIEnter",
-		-- ft = "",
-		-- keys = "",
-		-- colorscheme = "",
 		after = function(plugin)
 			require("yazi").setup({
 
