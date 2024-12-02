@@ -14,6 +14,7 @@ require("lze").load({
 					-- and configure them here
 					lua = { "stylua" },
 					go = { "gofumpt", "golint" }, -- Run all formatters sequentially
+					nix = { "alejandra" },
 					-- Use a sub-list to run only the first available formatter
 					-- javascript = { { "prettierd", "prettier" } },
 				},
