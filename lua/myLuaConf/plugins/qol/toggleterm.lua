@@ -1,6 +1,12 @@
-require("toggleterm").setup({})
+require("lze").load({
+	for_cat = "general.extra",
+	require("toggleterm").setup({}),
 
--- Define keymaps here, ensuring toggleterm is loaded
+	after = function(plugin)
+		require("toggleterm").setup({})
+	end,
+})
+
 local Terminal = require("toggleterm.terminal").Terminal
 
 local lazygit = Terminal:new({
