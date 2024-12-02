@@ -24,6 +24,12 @@
       url = "github:Djancyp/cheat-sheet";
       flake = false;
     };
+    # Beautiful diagnostics
+       "plugins-tinydiag" = {
+      url = "github:rachartier/tiny-inline-diagnostic.nvim";
+      flake = false;
+    };
+
 
     # see :help nixCats.flake.inputs
     # If you want your plugin to be loaded by the standard overlay,
@@ -184,6 +190,7 @@
             nvim-web-devicons
             pkgs.neovimPlugins.chsh
             pkgs.neovimPlugins.line-number-change-mode
+	    pkgs.neovimPlugins.tinydiag
             pkgs.neovimPlugins.virtcolumn
             popup-nvim # dep of cheatsheet-nvim
             todo-comments-nvim

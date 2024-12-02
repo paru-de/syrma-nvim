@@ -38,6 +38,7 @@ require("myLuaConf.plugins.tests.coverage")
 -- QoL
 require("myLuaConf.plugins.qol.toggleterm")
 require("myLuaConf.plugins.qol.mini")
+require("myLuaConf.plugins.qol.tinydiag")
 
 -- Git
 require("myLuaConf.plugins.git.gitsigns")

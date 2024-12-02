@@ -63,6 +63,22 @@
         "type": "github"
       }
     },
+    "plugins-tinydiag": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1733143236,
+        "narHash": "sha256-xXmS/4TqMi9SVhXurw3xBaVDngAVv/Bz28TvSwzZi7A=",
+        "owner": "rachartier",
+        "repo": "tiny-inline-diagnostic.nvim",
+        "rev": "0f3a6e316dbfc8fc8abbd4c631496a0f054e5459",
+        "type": "github"
+      },
+      "original": {
+        "owner": "rachartier",
+        "repo": "tiny-inline-diagnostic.nvim",
+        "type": "github"
+      }
+    },
     "plugins-virtcolumn": {
       "flake": false,
       "locked": {
@@ -85,6 +101,7 @@
         "nixpkgs": "nixpkgs",
         "plugins-chsh": "plugins-chsh",
         "plugins-line-number-change-mode": "plugins-line-number-change-mode",
+        "plugins-tinydiag": "plugins-tinydiag",
         "plugins-virtcolumn": "plugins-virtcolumn"
       }
     }
