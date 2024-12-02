@@ -1,2 +1,1 @@
-require('coverage').setup({
-})
+require("coverage").setup({})

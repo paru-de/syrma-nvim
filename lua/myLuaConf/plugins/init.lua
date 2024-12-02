@@ -73,9 +73,9 @@ require('lze').load {
     cmd = { "MarkdownPreview", "MarkdownPreviewStop", "MarkdownPreviewToggle", },
     ft = "markdown",
     keys = {
-      { "<leader>mp", "<cmd>MarkdownPreview <CR>",       mode = { "n" }, noremap = true, desc = "markdown preview" },
-      { "<leader>ms", "<cmd>MarkdownPreviewStop <CR>",   mode = { "n" }, noremap = true, desc = "markdown preview stop" },
-      { "<leader>mt", "<cmd>MarkdownPreviewToggle <CR>", mode = { "n" }, noremap = true, desc = "markdown preview toggle" },
+      { "<leader>tmp", "<cmd>MarkdownPreview <CR>",       mode = { "n" }, noremap = true, desc = "markdown preview" },
+      { "<leader>tms", "<cmd>MarkdownPreviewStop <CR>",   mode = { "n" }, noremap = true, desc = "markdown preview stop" },
+      { "<leader>tmt", "<cmd>MarkdownPreviewToggle <CR>", mode = { "n" }, noremap = true, desc = "markdown preview toggle" },
     },
     before = function(plugin)
       vim.g.mkdp_auto_close = 0
@@ -161,7 +161,7 @@ require('lze').load {
       require('lualine').setup({
         options = {
           icons_enabled = false,
-          theme = colorschemeName,
+          theme = "onedark",
           component_separators = '|',
           section_separators = '',
         },
@@ -246,26 +246,26 @@ require('lze').load {
             gs.reset_hunk { vim.fn.line '.', vim.fn.line 'v' }
           end, { desc = 'reset git hunk' })
           -- normal mode
-          map('n', '<leader>gs', gs.stage_hunk, { desc = 'git stage hunk' })
-          map('n', '<leader>gr', gs.reset_hunk, { desc = 'git reset hunk' })
-          map('n', '<leader>gS', gs.stage_buffer, { desc = 'git Stage buffer' })
-          map('n', '<leader>gu', gs.undo_stage_hunk, { desc = 'undo stage hunk' })
-          map('n', '<leader>gR', gs.reset_buffer, { desc = 'git Reset buffer' })
-          map('n', '<leader>gp', gs.preview_hunk, { desc = 'preview git hunk' })
-          map('n', '<leader>gb', function()
+          map('n', '<leader>hs', gs.stage_hunk, { desc = 'git stage hunk' })
+          map('n', '<leader>hr', gs.reset_hunk, { desc = 'git reset hunk' })
+          map('n', '<leader>hS', gs.stage_buffer, { desc = 'git Stage buffer' })
+          map('n', '<leader>hu', gs.undo_stage_hunk, { desc = 'undo stage hunk' })
+          map('n', '<leader>hR', gs.reset_buffer, { desc = 'git Reset buffer' })
+          map('n', '<leader>hp', gs.preview_hunk, { desc = 'preview git hunk' })
+          map('n', '<leader>hb', function()
             gs.blame_line { full = false }
           end, { desc = 'git blame line' })
-          map('n', '<leader>gd', gs.diffthis, { desc = 'git diff against index' })
-          map('n', '<leader>gD', function()
+          map('n', '<leader>hd', gs.diffthis, { desc = 'git diff against index' })
+          map('n', '<leader>hD', function()
             gs.diffthis '~'
           end, { desc = 'git diff against last commit' })
 
           -- Toggles
-          map('n', '<leader>gtb', gs.toggle_current_line_blame, { desc = 'toggle git blame line' })
-          map('n', '<leader>gtd', gs.toggle_deleted, { desc = 'toggle git show deleted' })
+          map('n', '<leader>htb', gs.toggle_current_line_blame, { desc = 'toggle git blame line' })
+          map('n', '<leader>htd', gs.toggle_deleted, { desc = 'toggle git show deleted' })
 
           -- Text object
-          map({ 'o', 'x' }, 'ih', ':<C-U>Gitsigns select_hunk<CR>', { desc = 'select git hunk' })
+          map({ 'o', 'x' }, 'hi', ':<C-U>Gitsigns select_hunk<CR>', { desc = 'select git hunk' })
         end,
       })
       vim.cmd([[hi GitSignsAdd guifg=#04de21]])
@@ -273,38 +273,4 @@ require('lze').load {
       vim.cmd([[hi GitSignsDelete guifg=#fa2525]])
     end,
   },
-  {
-    "which-key.nvim",
-    for_cat = 'general.extra',
-    -- cmd = { "" },
-    event = "DeferredUIEnter",
-    -- ft = "",
-    -- keys = "",
-    -- colorscheme = "",
-    after = function(plugin)
-      require('which-key').setup({
-      })
-      require('which-key').add {
-        { "<leader><leader>",  group = "buffer commands" },
-        { "<leader><leader>_", hidden = true },
-        { "<leader>c",         group = "[c]ode" },
-        { "<leader>c_",        hidden = true },
-        { "<leader>d",         group = "[d]ocument" },
-        { "<leader>d_",        hidden = true },
-        { "<leader>g",         group = "[g]it" },
-        { "<leader>g_",        hidden = true },
-        { "<leader>m",         group = "[m]arkdown" },
-        { "<leader>m_",        hidden = true },
-        { "<leader>r",         group = "[r]ename" },
-        { "<leader>r_",        hidden = true },
-        { "<leader>s",         group = "[s]earch" },
-        { "<leader>s_",        hidden = true },
-        { "<leader>t",         group = "[t]oggles" },
-        { "<leader>t_",        hidden = true },
-        { "<leader>w",         group = "[w]orkspace" },
-        { "<leader>w_",        hidden = true },
-      }
-    end,
-  },
-
 }
