@@ -269,3 +269,8 @@ end, { desc = "Open LazyGit" })
 vim.keymap.set("n", "<leader>tt", function()
 	require("snacks.terminal").toggle()
 end, { desc = "Open Floating Terminal" })
+
+-- GitBrowse
+vim.keymap.set("n", "<leader>ho", function()
+	require("snacks.gitbrowse").open()
+end, { desc = "Open in browser" })

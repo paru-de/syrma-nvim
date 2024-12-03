@@ -54,4 +54,7 @@ require("snacks").setup({
 	lazygit = {
 		enable = true,
 	},
+	gitbrowse = {
+		enable = true,
+	},
 })
