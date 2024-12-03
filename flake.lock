@@ -79,30 +79,13 @@
         "type": "github"
       }
     },
-    "plugins-virtcolumn": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1702641344,
-        "narHash": "sha256-4Q7dbgu/YxpHTLrMgGzJ2DaAuaH9VhkVTrtlbFmPYZY=",
-        "owner": "xiyaowong",
-        "repo": "virtcolumn.nvim",
-        "rev": "4d385b4aa42aa3af6fa2cb8527462fa4badbd163",
-        "type": "github"
-      },
-      "original": {
-        "owner": "xiyaowong",
-        "repo": "virtcolumn.nvim",
-        "type": "github"
-      }
-    },
     "root": {
       "inputs": {
         "nixCats": "nixCats",
         "nixpkgs": "nixpkgs",
         "plugins-chsh": "plugins-chsh",
         "plugins-line-number-change-mode": "plugins-line-number-change-mode",
-        "plugins-tinydiag": "plugins-tinydiag",
-        "plugins-virtcolumn": "plugins-virtcolumn"
+        "plugins-tinydiag": "plugins-tinydiag"
       }
     }
   },

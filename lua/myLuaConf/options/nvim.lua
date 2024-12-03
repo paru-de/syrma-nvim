@@ -70,10 +70,10 @@ vim.opt.list = false
 vim.opt.wrap = true
 vim.opt.linebreak = true
 vim.opt.textwidth = 80
+vim.opt.linebreak = true
 if vim.bo.filetype == "python" then
 	vim.o.nowrap = true
 end
-vim.opt.colorcolumn = { 80 } -- xiyaowong/vircolumn.nvim makes it smaller and less fugly
 
 -- stops line wrapping from being confusing
 vim.opt.breakindent = true
@@ -113,7 +113,8 @@ vim.opt.timeoutlen = 300
 vim.opt.completeopt = "menu,preview,noselect"
 
 -- Highlight on yank
-local highlight_group = vim.api.nvim_create_augroup("YankHighlight", { clear = true })
+local highlight_group =
+	vim.api.nvim_create_augroup("YankHighlight", { clear = true })
 vim.api.nvim_create_autocmd("TextYankPost", {
 	callback = function()
 		vim.highlight.on_yank()

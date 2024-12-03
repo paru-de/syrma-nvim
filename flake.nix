@@ -14,11 +14,11 @@
       url = "github:sethen/line-number-change-mode.nvim";
       flake = false;
     };
-    # thin vim.opt.colorcolumn
-    "plugins-virtcolumn" = {
-      url = "github:xiyaowong/virtcolumn.nvim";
-      flake = false;
-    };
+    # # thin vim.opt.colorcolumn
+    # "plugins-virtcolumn" = {
+    #   url = "github:xiyaowong/virtcolumn.nvim";
+    #   flake = false;
+    # };
     # Code cheat sheet
     "plugins-chsh" = {
       url = "github:Djancyp/cheat-sheet";
@@ -180,7 +180,6 @@
             cheatsheet-nvim
             cinnamon-nvim
             leap-nvim
-            markview-nvim
             mini-nvim
             nui-nvim # dep of neo-tree
             nvim-autopairs
@@ -190,10 +189,12 @@
             pkgs.neovimPlugins.chsh
             pkgs.neovimPlugins.line-number-change-mode
             pkgs.neovimPlugins.tinydiag
+            /*
             pkgs.neovimPlugins.virtcolumn
+            */
             popup-nvim # dep of cheatsheet-nvim
+            snacks-nvim
             todo-comments-nvim
-            toggleterm-nvim
           ];
         };
         # You can retreive information from the
@@ -283,6 +284,7 @@
             vim-startuptime
             which-key-nvim
             yazi-nvim
+            markview-nvim
           ];
         };
       };

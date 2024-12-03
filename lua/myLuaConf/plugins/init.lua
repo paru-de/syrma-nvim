@@ -28,7 +28,10 @@ require("lze").load({
 		after = function(plugin)
 			require("lazydev").setup({
 				library = {
-					{ words = { "nixCats" }, path = (require("nixCats").nixCatsPath or "") .. "/lua" },
+					{
+						words = { "nixCats" },
+						path = (require("nixCats").nixCatsPath or "") .. "/lua",
+					},
 				},
 			})
 		end,
@@ -37,7 +40,13 @@ require("lze").load({
 	{
 		"undotree",
 		for_cat = "general.extra",
-		cmd = { "UndotreeToggle", "UndotreeHide", "UndotreeShow", "UndotreeFocus", "UndotreePersistUndo" },
+		cmd = {
+			"UndotreeToggle",
+			"UndotreeHide",
+			"UndotreeShow",
+			"UndotreeFocus",
+			"UndotreePersistUndo",
+		},
 		before = function(_)
 			vim.g.undotree_WindowLayout = 1
 			vim.g.undotree_SplitWidth = 40

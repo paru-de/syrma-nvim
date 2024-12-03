@@ -35,8 +35,8 @@ require("myLuaConf.plugins.help.chsh-vim")
 require("myLuaConf.plugins.tests.coverage")
 
 -- QoL
-require("myLuaConf.plugins.qol.toggleterm")
 require("myLuaConf.plugins.qol.mini")
+require("myLuaConf.plugins.qol.snacks")
 require("myLuaConf.plugins.qol.tinydiag")
 require("myLuaConf.plugins.qol.markview")
 
