@@ -24,7 +24,6 @@ end
 
 -- UI Plugins
 require("myLuaConf.plugins.ui.lnchangemode") -- show editor mode on active line number
-require("myLuaConf.plugins.ui.neo-tree")
 require("myLuaConf.plugins.ui.which-key")
 require("myLuaConf.plugins.ui.yazi")
 
@@ -39,6 +38,7 @@ require("myLuaConf.plugins.tests.coverage")
 require("myLuaConf.plugins.qol.toggleterm")
 require("myLuaConf.plugins.qol.mini")
 require("myLuaConf.plugins.qol.tinydiag")
+require("myLuaConf.plugins.qol.markview")
 
 -- Git
 require("myLuaConf.plugins.git.gitsigns")

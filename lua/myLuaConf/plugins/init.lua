@@ -1,24 +1,11 @@
 -- Auto Save
-require("auto-save").setup({
-	opts = {},
-})
+require("auto-save").setup({})
 
 -- Todo Comments
-require("todo-comments").setup({
-
-	opts = { signs = false },
-})
+require("todo-comments").setup({})
 
 -- Automatically insert pairs
-require("nvim-autopairs").setup({
-	config = function()
-		-- If you want to automatically add `(` after selecting a function or method
-		local cmp_autopairs = require 'nvim-autopairs.completion.cmp'
-		local cmp = require 'cmp'
-		cmp.event:on('confirm_done', cmp_autopairs.on_confirm_done())
-	end,
-
-})
+require("nvim-autopairs").setup({})
 
 -- Show color codes as colors
 require("nvim-highlight-colors").setup({})

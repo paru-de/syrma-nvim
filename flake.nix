@@ -25,11 +25,10 @@
       flake = false;
     };
     # Beautiful diagnostics
-       "plugins-tinydiag" = {
+    "plugins-tinydiag" = {
       url = "github:rachartier/tiny-inline-diagnostic.nvim";
       flake = false;
     };
-
 
     # see :help nixCats.flake.inputs
     # If you want your plugin to be loaded by the standard overlay,
@@ -181,8 +180,8 @@
             cheatsheet-nvim
             cinnamon-nvim
             leap-nvim
+            markview-nvim
             mini-nvim
-            neo-tree-nvim
             nui-nvim # dep of neo-tree
             nvim-autopairs
             nvim-coverage
@@ -190,7 +189,7 @@
             nvim-web-devicons
             pkgs.neovimPlugins.chsh
             pkgs.neovimPlugins.line-number-change-mode
-	    pkgs.neovimPlugins.tinydiag
+            pkgs.neovimPlugins.tinydiag
             pkgs.neovimPlugins.virtcolumn
             popup-nvim # dep of cheatsheet-nvim
             todo-comments-nvim
