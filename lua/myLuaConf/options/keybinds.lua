@@ -268,7 +268,7 @@ end, { desc = "Open LazyGit" })
 -- Toggle split terminal
 vim.keymap.set("n", "<leader>tt", function()
 	require("snacks.terminal").toggle()
-end, { desc = "Open Floating Terminal" })
+end, { desc = "Toggle Terminal" })
 
 -- GitBrowse
 vim.keymap.set("n", "<leader>ho", function()
