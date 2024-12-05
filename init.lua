@@ -19,8 +19,9 @@ Of course, if you only ever download nvim with nix, this isnt needed.]]
 --[[ an error if not loaded via nixCats  ]]
 --[[ ----------------------------------- ]]
 require("nixCatsUtils").setup({
-	non_nix_value = true,
+  non_nix_value = true,
 })
+
 -- then load the plugins via paq-nvim
 -- YOU are in charge of putting the plugin
 -- urls and build steps in there, which will only be used when not on nix,

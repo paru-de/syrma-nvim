@@ -4,27 +4,27 @@ vim.g.maplocalleader = " "
 
 -- See keybinds.lua for system copy/paste
 if os.getenv("WAYLAND_DISPLAY") and vim.fn.exepath("wl-copy") ~= "" then
-	vim.g.clipboard = {
-		name = "wl-clipboard",
-		copy = {
-			["+"] = "wl-copy",
-			["*"] = "wl-copy",
-		},
-		paste = {
-			["+"] = "wl-paste",
-			["*"] = "wl-paste",
-		},
-		cache_enabled = 1,
-	}
+  vim.g.clipboard = {
+    name = "wl-clipboard",
+    copy = {
+      ["+"] = "wl-copy",
+      ["*"] = "wl-copy",
+    },
+    paste = {
+      ["+"] = "wl-paste",
+      ["*"] = "wl-paste",
+    },
+    cache_enabled = 1,
+  }
 end
 
 -- Theme
 require("onedark").setup({
-	style = "darker",
-	transparent = true,
-	lualine = {
-		transparent = true,
-	},
+  style = "darker",
+  transparent = true,
+  lualine = {
+    transparent = true,
+  },
 })
 require("onedark").load()
 -- Overriding some backgrounds  TODO: make popups more visible against bg (border possible?)
@@ -72,7 +72,7 @@ vim.opt.linebreak = true
 vim.opt.textwidth = 80
 vim.opt.linebreak = true
 if vim.bo.filetype == "python" then
-	vim.o.nowrap = true
+  vim.o.nowrap = true
 end
 
 -- stops line wrapping from being confusing
@@ -84,10 +84,10 @@ vim.opt.cpoptions:append("I")
 
 -- Disable auto comment on enter
 vim.api.nvim_create_autocmd("FileType", {
-	desc = "remove formatoptions",
-	callback = function()
-		vim.opt.formatoptions:remove({ "c", "r", "o" })
-	end,
+  desc = "remove formatoptions",
+  callback = function()
+    vim.opt.formatoptions:remove({ "c", "r", "o" })
+  end,
 })
 
 -- [[ Search ]]
@@ -114,13 +114,13 @@ vim.opt.completeopt = "menu,preview,noselect"
 
 -- Highlight on yank
 local highlight_group =
-	vim.api.nvim_create_augroup("YankHighlight", { clear = true })
+  vim.api.nvim_create_augroup("YankHighlight", { clear = true })
 vim.api.nvim_create_autocmd("TextYankPost", {
-	callback = function()
-		vim.highlight.on_yank()
-	end,
-	group = highlight_group,
-	pattern = "*",
+  callback = function()
+    vim.highlight.on_yank()
+  end,
+  group = highlight_group,
+  pattern = "*",
 })
 
 -- Configure how new splits should be opened

@@ -16,10 +16,10 @@ require("myLuaConf.plugins.core.completion")
 require("myLuaConf.plugins.core.treesitter")
 require("myLuaConf.plugins.core.telescope")
 if nixCats("debug") then
-	require("myLuaConf.plugins.core.debug")
+  require("myLuaConf.plugins.core.debug")
 end
 if nixCats("lint") then
-	require("myLuaConf.plugins.core.lint")
+  require("myLuaConf.plugins.core.lint")
 end
 
 -- UI Plugins
